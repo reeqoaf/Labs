@@ -1,7 +1,17 @@
 ﻿namespace N4.Abstractions
 {
-    public interface Component
+    public abstract class Component
     {
-        void Execute();
+        public string Name { get; set; }
+
+        protected Component(string name)
+        {
+            Name = name;
+        }
+        public virtual void Add(Component component) { }
+
+        public virtual void Remove(Component component) { }
+
+        public virtual void Execute() { Console.WriteLine(Name); }
     }
 }
